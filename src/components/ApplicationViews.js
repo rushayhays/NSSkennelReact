@@ -9,6 +9,7 @@ import { AnimalList } from "./animal/AnimalList"
 import { LocationList } from "./location/LocationList"
 import { CustomerList } from "./customer/CustomerList"
 import { EmployeeList } from "./employee/EmployeeList"
+import { AnimalDetail } from "./animal/AnimalDetail"
 
 export const ApplicationViews = () => {
     return (
@@ -19,6 +20,7 @@ export const ApplicationViews = () => {
 
                 {/* Render the animal list when http://localhost:3000/animals */}
                 <Route path="/animals" element={<AnimalList />} />
+                <Route path="/animals/:animalId" element={<AnimalDetail />} />
 
                 {/* Render the customer list when http://localhost:3000/customers */}
                 <Route path="/customers" element={<CustomerList />} />
@@ -28,6 +30,7 @@ export const ApplicationViews = () => {
 
                 {/* Render the location list when http://localhost:3000/locations */}
                 <Route path="/locations" element={<LocationList />} />
+
 
             </Routes>
         </>
