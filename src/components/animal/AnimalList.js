@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { AnimalCard } from './AnimalCard';
 import { getAllAnimals, getAnimalById } from '../../modules/AnimalManager';
 import { deleteAnimal } from '../../modules/AnimalManager';
+import { useNavigate } from "react-router-dom"
+
+
 
 export const AnimalList = () => {
   // The initial state is an empty array
@@ -25,14 +28,24 @@ export const AnimalList = () => {
     deleteAnimal(id)
     .then(() => getAllAnimals().then(setAnimals));
   };
+  
+
+  const navigate = useNavigate();
 
   // Finally we use .map() to "loop over" the animals array to show a list of animal cards
   return(
-    <div className="container-cards">
-      {animals.map(animal =>
-        <AnimalCard key={animal.id} animal={animal}  handleDeleteAnimal={handleDeleteAnimal} />
-      )}
-    </div>
+    <>
+      <section className="section-content">
+        <button type="button" className="btn" onClick={() => {navigate("/animals/create")}}>
+          Admit Animal
+        </button>
+      </section>
+      <div className="container-cards">
+        {animals.map(animal =>
+          <AnimalCard key={animal.id} animal={animal}  handleDeleteAnimal={handleDeleteAnimal} />
+        )}
+      </div>
+    </>
   );
 };
 
