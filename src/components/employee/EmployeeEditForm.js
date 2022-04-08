@@ -57,16 +57,6 @@ export const EmployeeEditForm = () => {
               value={employee.name}
             />
             <label htmlFor="name">Employee name</label>
-
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={handleFieldChange}
-              id="location"
-              value={employee.location.name}
-            />
-            <label htmlFor="location">Location</label>
           </div>
           {/* Be sure to include employee and customer */}
           <div className="alignRight">
