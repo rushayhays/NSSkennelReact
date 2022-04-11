@@ -2,6 +2,7 @@ import React, {useState} from "react"
 import { NavBar } from "./nav/NavBar"
 import { ApplicationViews } from "./ApplicationViews"
 import "./Kennel.css"
+import { Madphrase } from "../modules/Madlib/Madlib"
 
 export const Kennel = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
