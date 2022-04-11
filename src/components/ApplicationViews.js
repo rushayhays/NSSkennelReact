@@ -51,8 +51,8 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                 <Route path="/customers/:customerId/edit" element={<PrivateRoute><CustomerEditForm /></PrivateRoute>} />
 
                 {/* Render the employee list when http://localhost:3000/employees */}
-                <Route path="/employees" element={<PrivateRoute><EmployeeList /></PrivateRoute>} />
-                <Route path="/employees/:employeeId" element={<EmployeeDetail />} />
+                <Route exact path="/employees" element={<PrivateRoute><EmployeeList /></PrivateRoute>} />
+                <Route exact path="/employees/:employeeId" element={<EmployeeDetail />} />
                 <Route path="/employees/:employeeId/edit" element={<PrivateRoute><EmployeeEditForm /></PrivateRoute>} />
 
                 {/* Render the location list when http://localhost:3000/locations */}

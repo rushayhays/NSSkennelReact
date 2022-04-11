@@ -26,7 +26,7 @@ export const CustomerList = () => {
     .then(() => getAllCustomers().then(setCustomers));
   };
 
-  // Finally we use .map() to "loop over" the austomers array to show a list of austomer cards
+  // Finally we use .map() to "loop over" the customers array to show a list of customer cards
   return(
     <div className="container-cards">
       {customers.map(customer =>

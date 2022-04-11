@@ -13,7 +13,9 @@ export const AnimalForm = () => {
 		name: "",
 		breed: "",
 		locationId: 0,
-		customerId: 0
+		customerId: 0,
+		dateAdmitted:"",
+		isDischarged: false
 	});
 
 	const [isLoading, setIsLoading] = useState(false);
@@ -89,6 +91,11 @@ export const AnimalForm = () => {
 		}
 	}
 
+	//Throw in something to grab the date here
+	let today = new Date().toISOString().slice(0, 10)
+
+	console.log("This is today's date" + today)
+
 	return (
 		<form className="animalForm">
 			<h2 className="animalForm__title">New Animal</h2>
@@ -130,6 +137,15 @@ export const AnimalForm = () => {
 					</select>
 				</div>
 			</fieldset>
+
+			{/* This should collect a date and add it to the object */}
+			<fieldset>
+				<div className="form-group">
+					<label for="dateAdmitted">Date Admitted:</label><br></br>
+					<input type="date" id="dateAdmitted" name="dateAdmitted" defaultValue={today} min="2018-01-01" max="2024-12-31" onChange={handleControlledInputChange}></input>
+				</div>
+			</fieldset>
+
 			<button type="button" className="btn btn-primary"
 				onClick={handleClickSaveAnimal}>
 				Save Animal
